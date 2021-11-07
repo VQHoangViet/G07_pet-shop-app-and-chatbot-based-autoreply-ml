@@ -14,7 +14,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/logo_lgi"
             android:layout_width="228dp"
             android:layout_height="198dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -35,7 +35,7 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/text_welcome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/chao"
@@ -59,7 +59,7 @@
             android:textAlignment="center" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/name_lgi"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="50dp"
@@ -72,7 +72,7 @@
             android:textAlignment="center" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/pass_lgi"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="50dp"
@@ -99,7 +99,7 @@
             android:textAlignment="center" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/lgi_bt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
@@ -111,7 +111,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/new_user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -127,7 +127,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/thumbnail"
             android:layout_width="418dp"
             android:layout_height="217dp"
             app:layout_constraintBottom_toBottomOf="parent"

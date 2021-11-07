@@ -14,9 +14,9 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="168dp"
-            android:layout_height="154dp"
+            android:id="@+id/logo_lgi"
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -31,10 +31,11 @@
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+        app:layout_constraintVertical_bias="1.0">
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/text_welcome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/chao"
@@ -44,7 +45,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/name_lgi"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="50dp"
@@ -57,7 +58,7 @@
             android:textAlignment="center" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/pass_lgi"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="50dp"
@@ -70,7 +71,7 @@
             android:textAlignment="center" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/fg_pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Forget Your Password?Recovery it"
@@ -79,7 +80,7 @@
             tools:layout_margin="10dp" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/lgi_bt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
@@ -91,10 +92,10 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/new_user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:text="New User? Signup"
             android:textAlignment="center" />
     </LinearLayout>
@@ -110,42 +111,41 @@
         app:layout_constraintVertical_bias="0.45">
 
         <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="411dp"
-            android:layout_height="201dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/cam" />
-
-        <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/thumbnail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Thanks!"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-            app:layout_constraintStart_toStartOf="@+id/textView8"
-            app:layout_constraintTop_toBottomOf="@+id/textView8"
-            app:layout_constraintVertical_bias="0.07999998" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.97"
+            app:srcCompat="@drawable/bottombackground" />
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/text_tn_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="24dp"
             android:layout_marginStart="24dp"
-            android:text="Love You"
+            android:text="UI Lover"
             android:textColor="@color/white"
             android:textSize="40sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+            app:layout_constraintBottom_toBottomOf="@+id/thumbnail"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.19" />
+            app:layout_constraintVertical_bias="0.408" />
+
+        <TextView
+            android:id="@+id/text_tn_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Channel"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/thumbnail"
+            app:layout_constraintStart_toStartOf="@+id/text_tn_1"
+            app:layout_constraintTop_toBottomOf="@+id/text_tn_1"
+            app:layout_constraintVertical_bias="0.065" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
