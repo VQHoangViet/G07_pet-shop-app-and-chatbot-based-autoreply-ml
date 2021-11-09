@@ -15,24 +15,24 @@
 
         <ImageView
             android:id="@+id/logo_lgi"
-            android:layout_width="wrap_content"
-            android:layout_height="130dp"
+            android:layout_width="149dp"
+            android:layout_height="113dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/logo" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
         <TextView
             android:id="@+id/text_welcome"
@@ -45,7 +45,21 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/name_lgi"
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/edit_login"
+            android:elevation="3dp"
+            android:ems="10"
+            android:hint="Email"
+            android:inputType="textPersonName"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/etPhone"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="50dp"
@@ -53,12 +67,12 @@
             android:background="@drawable/edit_login"
             android:elevation="3dp"
             android:ems="10"
+            android:hint="Mobile Number"
             android:inputType="textPersonName"
-            android:text="Username"
             android:textAlignment="center" />
 
         <EditText
-            android:id="@+id/pass_lgi"
+            android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="50dp"
@@ -66,86 +80,72 @@
             android:layout_marginEnd="50dp"
             android:background="@drawable/edit_login"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Password"
+            android:hint="Password"
+            android:inputType="textPassword"
             android:textAlignment="center" />
 
-        <TextView
-            android:id="@+id/fg_pass"
+        <EditText
+            android:id="@+id/etConfirmPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Forget Your Password?Recovery it"
-            android:textAlignment="center"
-            android:textSize="14sp"
-            tools:layout_margin="10dp" />
+            android:layout_height="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/edit_login"
+            android:ems="10"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:textAlignment="center" />
 
         <Button
-            android:id="@+id/lgi_bt"
+            android:id="@+id/btnCreateAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="50dp"
             android:background="@drawable/btn_login"
-            android:text="Login"
+            android:text="Create account"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/new_user"
+            android:id="@+id/or"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="New User? Signup"
+            android:layout_margin="10dp"
+            android:text="Or"
             android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/btnSignIn2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/btn_login"
+            android:text="Sign In"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="418dp"
+        android:layout_height="113dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.45">
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
             android:id="@+id/thumbnail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="418dp"
+            android:layout_height="217dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.97"
-            app:srcCompat="@drawable/bottombackground" />
+            app:srcCompat="@drawable/cam" />
 
-        <TextView
-            android:id="@+id/text_tn_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="24dp"
-            android:layout_marginStart="24dp"
-            android:text="UI Lover"
-            android:textColor="@color/white"
-            android:textSize="40sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/thumbnail"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.408" />
-
-        <TextView
-            android:id="@+id/text_tn_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Channel"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/thumbnail"
-            app:layout_constraintStart_toStartOf="@+id/text_tn_1"
-            app:layout_constraintTop_toBottomOf="@+id/text_tn_1"
-            app:layout_constraintVertical_bias="0.065" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
