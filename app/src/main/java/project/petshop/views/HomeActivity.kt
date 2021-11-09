@@ -16,7 +16,7 @@ class HomeActivity : AppCompatActivity() {
 
         btnSignOut.setOnClickListener {
             firebaseAuth.signOut()
-            startActivity(Intent(this, CreateAccountActivity::class.java))
+            startActivity(Intent(this, SignInActivity::class.java))
             toast("signed out")
             finish()
         }
