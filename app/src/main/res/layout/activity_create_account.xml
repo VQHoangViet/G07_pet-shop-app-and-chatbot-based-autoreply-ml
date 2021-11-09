@@ -15,8 +15,8 @@
 
         <ImageView
             android:id="@+id/logo_lgi"
-            android:layout_width="228dp"
-            android:layout_height="198dp"
+            android:layout_width="149dp"
+            android:layout_height="113dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -26,8 +26,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="412dp"
-        android:layout_height="403dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +45,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="50dp"
@@ -54,12 +54,12 @@
             android:background="@drawable/edit_login"
             android:elevation="3dp"
             android:ems="10"
+            android:hint="Email"
             android:inputType="textPersonName"
-            android:text="Email"
             android:textAlignment="center" />
 
         <EditText
-            android:id="@+id/name_lgi"
+            android:id="@+id/etPhone"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="50dp"
@@ -67,12 +67,12 @@
             android:background="@drawable/edit_login"
             android:elevation="3dp"
             android:ems="10"
+            android:hint="Mobile Number"
             android:inputType="textPersonName"
-            android:text="Mobile Number"
             android:textAlignment="center" />
 
         <EditText
-            android:id="@+id/pass_lgi"
+            android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="50dp"
@@ -80,12 +80,12 @@
             android:layout_marginEnd="50dp"
             android:background="@drawable/edit_login"
             android:ems="10"
+            android:hint="Password"
             android:inputType="textPersonName"
-            android:text="Password"
             android:textAlignment="center" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName4"
+            android:id="@+id/etConfirmPassword"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="50dp"
@@ -94,18 +94,18 @@
             android:layout_marginBottom="15dp"
             android:background="@drawable/edit_login"
             android:ems="10"
+            android:hint="Confirm Password"
             android:inputType="textPersonName"
-            android:text="Confirm Password"
             android:textAlignment="center" />
 
         <Button
-            android:id="@+id/lgi_bt"
+            android:id="@+id/btnCreateAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="50dp"
             android:background="@drawable/btn_login"
-            android:text="Signup"
+            android:text="Create account"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -115,8 +115,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="New User? Login"
+            android:text="Or"
             android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/btnSignIn2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/btn_login"
+            android:text="Sign In"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -53,8 +53,8 @@
             android:background="@drawable/edit_login"
             android:elevation="3dp"
             android:ems="10"
+            android:hint="Username"
             android:inputType="textPersonName"
-            android:text="Username"
             android:textAlignment="center" />
 
         <EditText
@@ -66,15 +66,15 @@
             android:layout_marginEnd="50dp"
             android:background="@drawable/edit_login"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Password"
+            android:hint="Password"
+            android:inputType="textWebPassword"
             android:textAlignment="center" />
 
         <TextView
             android:id="@+id/fg_pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Forget Your Password?Recovery it"
+            android:text="Forget Your Password? Recovery it"
             android:textAlignment="center"
             android:textSize="14sp"
             tools:layout_margin="10dp" />
@@ -96,8 +96,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="New User? Signup"
+            android:text="Or"
             android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/signup_bt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/btn_login"
+            android:text="Sign Up"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

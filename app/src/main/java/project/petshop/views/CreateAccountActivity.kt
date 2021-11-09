@@ -1,11 +1,12 @@
-package project.petshop
+package project.petshop.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import project.petshop.R
 
-class MainActivity : AppCompatActivity() {
+class CreateAccountActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_create_account)
     }
 }
