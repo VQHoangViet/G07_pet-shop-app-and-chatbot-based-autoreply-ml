@@ -81,7 +81,7 @@
             android:background="@drawable/edit_login"
             android:ems="10"
             android:hint="Password"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             android:textAlignment="center" />
 
         <EditText
@@ -95,7 +95,7 @@
             android:background="@drawable/edit_login"
             android:ems="10"
             android:hint="Confirm Password"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             android:textAlignment="center" />
 
         <Button
@@ -111,7 +111,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/new_user"
+            android:id="@+id/or"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"

@@ -45,7 +45,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/name_lgi"
+            android:id="@+id/etSignInEmail"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="50dp"
@@ -53,12 +53,12 @@
             android:background="@drawable/edit_login"
             android:elevation="3dp"
             android:ems="10"
-            android:hint="Username"
-            android:inputType="textPersonName"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
             android:textAlignment="center" />
 
         <EditText
-            android:id="@+id/pass_lgi"
+            android:id="@+id/etSignInPassword"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="50dp"
@@ -80,13 +80,13 @@
             tools:layout_margin="10dp" />
 
         <Button
-            android:id="@+id/lgi_bt"
+            android:id="@+id/btnSignIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="50dp"
             android:background="@drawable/btn_login"
-            android:text="Login"
+            android:text="Sign in"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -100,13 +100,13 @@
             android:textAlignment="center" />
 
         <Button
-            android:id="@+id/signup_bt"
+            android:id="@+id/btnCreateAccount2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="50dp"
             android:background="@drawable/btn_login"
-            android:text="Sign Up"
+            android:text="create account"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -127,9 +127,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.97"
+            app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/bottombackground" />
 
         <TextView
