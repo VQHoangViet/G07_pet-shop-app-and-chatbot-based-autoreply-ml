@@ -25,7 +25,7 @@ class CreateAccountActivity : AppCompatActivity() {
             signIn()
         }
 
-        btnSignIn2.setOnClickListener {
+        signin.setOnClickListener {
             startActivity(Intent(this, SignInActivity::class.java))
             toast("please sign into your account")
             finish()
