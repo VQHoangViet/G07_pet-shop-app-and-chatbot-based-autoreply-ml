@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    style="@style/Widget.MaterialComponents.BottomAppBar">
+    style="@style/Widget.MaterialComponents.BottomAppBar"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
 
 
     <ScrollView
@@ -58,7 +60,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
 
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginEnd="32dp"
                     android:src="@drawable/profile"
                     app:layout_constraintBottom_toBottomOf="@+id/textView2"
                     app:layout_constraintEnd_toEndOf="parent"

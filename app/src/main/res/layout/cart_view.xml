@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/burger"
+    android:elevation="3dp">
+
+    <ImageView
+        android:id="@+id/picCard"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/title2Txt"
+        android:layout_width="68dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="title"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/picCard"
+        app:layout_constraintTop_toTopOf="@+id/picCard" />
+
+    <ImageView
+        android:id="@+id/minusCardBtn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/picCard"
+        app:layout_constraintStart_toEndOf="@+id/picCard"
+        app:srcCompat="@drawable/minus" />
+
+    <TextView
+        android:id="@+id/numberItemTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="1"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/minusCardBtn"
+        app:layout_constraintStart_toEndOf="@+id/minusCardBtn"
+        app:layout_constraintTop_toTopOf="@+id/minusCardBtn"
+        app:layout_constraintVertical_bias="0.625" />
+
+    <ImageView
+        android:id="@+id/plusCardBtn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/minusCardBtn"
+        app:layout_constraintStart_toEndOf="@+id/numberItemTxt"
+        app:layout_constraintTop_toTopOf="@+id/minusCardBtn"
+        app:srcCompat="@drawable/plus" />
+
+    <TextView
+        android:id="@+id/feeEachitem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="0"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/title2Txt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/title2Txt" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:text="$"
+        android:textSize="18sp"
+        android:textColor="@color/red"
+        app:layout_constraintBottom_toBottomOf="@+id/feeEachitem"
+        app:layout_constraintEnd_toStartOf="@+id/feeEachitem"
+        app:layout_constraintTop_toTopOf="@+id/feeEachitem" />
+
+    <TextView
+        android:id="@+id/totalEachitem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/plusCardBtn"
+        app:layout_constraintEnd_toEndOf="@+id/feeEachitem"
+        app:layout_constraintTop_toTopOf="@+id/plusCardBtn" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:text="$"
+        android:textColor="@color/red"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/totalEachitem"
+        app:layout_constraintEnd_toStartOf="@+id/totalEachitem"
+        app:layout_constraintTop_toTopOf="@+id/totalEachitem" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
