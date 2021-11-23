@@ -11,15 +11,15 @@ import project.petshop.utils.FirebaseUtils.firebaseAuth
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_intro)
+        setContentView(R.layout.viewholder_popular)
 // sign out a user
 
-        btnSignOut.setOnClickListener {
-            firebaseAuth.signOut()
-            startActivity(Intent(this, SignInActivity::class.java))
-            toast("signed out")
-            finish()
-        }
+//        btnSignOut.setOnClickListener {
+//            firebaseAuth.signOut()
+//            startActivity(Intent(this, SignInActivity::class.java))
+//            toast("signed out")
+//            finish()
+//        }
 
 
     }

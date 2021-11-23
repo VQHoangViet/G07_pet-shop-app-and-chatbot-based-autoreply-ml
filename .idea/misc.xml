@@ -3,15 +3,29 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/drawable-xhdpi/category_background2.xml" value="0.17533783783783785" />
+        <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/drawable-xhdpi/category_background3.xml" value="0.17533783783783785" />
+        <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/drawable/card_background.xml" value="0.17533783783783785" />
+        <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/drawable/category_background.xml" value="0.17533783783783785" />
+        <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/drawable/category_background2.xml" value="0.17533783783783785" />
+        <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/drawable/category_background3.xml" value="0.17533783783783785" />
+        <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/drawable/category_background4.xml" value="0.17533783783783785" />
         <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/drawable/edit_login.xml" value="0.17533783783783785" />
         <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/drawable/orange_bt_background.xml" value="0.17533783783783785" />
+        <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/drawable/search_back.xml" value="0.17533783783783785" />
+        <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/drawable/viewholder_cat.xml" value="0.17533783783783785" />
+        <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/layout/activity_cart.xml" value="0.16486486486486487" />
         <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/layout/activity_create_account.xml" value="0.176" />
         <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/layout/activity_home.xml" value="0.144" />
         <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/layout/activity_intro.xml" value="0.176" />
         <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/layout/activity_main.xml" value="0.19322916666666667" />
         <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/layout/activity_sign_in.xml" value="0.176" />
+        <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/layout/cart_view.xml" value="0.16486486486486487" />
         <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/layout/login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/layout/product_information.xml" value="0.16486486486486487" />
         <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/layout/signup.xml" value="0.2" />
+        <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/layout/viewholder_cat.xml" value="0.2" />
+        <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/layout/viewholder_popular.xml" value="0.176" />
         <entry key="..\:/Users/Asus/Documents/Tailieu/Phat trien ung dung/project/app/src/main/res/drawable/btn_login.xml" value="0.1" />
         <entry key="..\:/Users/Asus/Documents/Tailieu/Phat trien ung dung/project/app/src/main/res/drawable/edit_login.xml" value="0.12129629629629629" />
         <entry key="..\:/Users/Asus/Documents/Tailieu/Phat trien ung dung/project/app/src/main/res/layout/activity_main.xml" value="0.2" />
