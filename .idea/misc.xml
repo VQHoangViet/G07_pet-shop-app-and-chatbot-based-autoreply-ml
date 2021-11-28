@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/2021/Android/petshop_ADproject/app/src/main/res/layout/activity_home.xml" value="0.23728050427735253" />
         <entry key="..\:/2021/Android/petshop_ADproject/app/src/main/res/layout/activity_model.xml" value="0.17481884057971014" />
         <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/drawable-xhdpi/category_background2.xml" value="0.17533783783783785" />
         <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/drawable-xhdpi/category_background3.xml" value="0.17533783783783785" />
@@ -49,5 +50,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.17481884057971014" />
+      </ProjectState>
+    </option>
   </component>
 </project>
