@@ -19,7 +19,7 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.activity_profile)
 // sign out a user
 
 //        btnSignOut.setOnClickListener {
@@ -29,29 +29,29 @@ class HomeActivity : AppCompatActivity() {
 //            finish()
 //        }
 
-        adapterQuickView = ProductAdapter(this, R.layout.viewholder_cat, products)
-        adapterPopular = ProductAdapter(this, R.layout.viewholder_popular, popular)
-        recyclerViewQuickView.adapter = adapterQuickView
-        recyclerViewPopular.adapter = adapterPopular
-
-        Product.getRecent()
-            .addOnSuccessListener { querySnapshot ->
-                val documents = querySnapshot.documents
-                for (doc in documents) {
-                    val product = Product(doc)
-                    products.add(product)
-                    adapterQuickView!!.notifyItemInserted(products.size - 1)
-                }
-            }
-
-        Product.get()
-            .addOnSuccessListener { querySnapshot ->
-                val documents = querySnapshot.documents
-                for (doc in documents) {
-                    val product = Product(doc)
-                    popular.add(product)
-                    adapterPopular!!.notifyItemInserted(popular.size - 1)
-                }
-            }
+//        adapterQuickView = ProductAdapter(this, R.layout.viewholder_cat, products)
+//        adapterPopular = ProductAdapter(this, R.layout.viewholder_popular, popular)
+//        recyclerViewQuickView.adapter = adapterQuickView
+//        recyclerViewPopular.adapter = adapterPopular
+//
+//        Product.getRecent()
+//            .addOnSuccessListener { querySnapshot ->
+//                val documents = querySnapshot.documents
+//                for (doc in documents) {
+//                    val product = Product(doc)
+//                    products.add(product)
+//                    adapterQuickView!!.notifyItemInserted(products.size - 1)
+//                }
+//            }
+//
+//        Product.get()
+//            .addOnSuccessListener { querySnapshot ->
+//                val documents = querySnapshot.documents
+//                for (doc in documents) {
+//                    val product = Product(doc)
+//                    popular.add(product)
+//                    adapterPopular!!.notifyItemInserted(popular.size - 1)
+//                }
+//            }
     }
 }
