@@ -46,6 +46,7 @@ class HomeActivity : AppCompatActivity() {
                     val product = Product(doc)
                     products.add(product)
                     adapterQuickView!!.notifyItemInserted(products.size - 1)
+                    adapterQuickView!!.notifyDataSetChanged()
                 }
             }
 

@@ -78,7 +78,7 @@
                     android:drawableStart="@drawable/search_back"
                     android:drawablePadding="10dp"
                     android:ems="10"
-                    android:hint="Find Your Foot"
+                    android:hint="Find Your Food"
                     android:inputType="textPersonName"
                     android:minHeight="48dp"
                     android:paddingStart="20dp"
@@ -168,7 +168,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="24dp"
-                    android:text="Quick view"
+                    android:text="Categories"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -287,7 +287,6 @@
                     android:layout_height="32dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="3dp"
-                    android:layout_weight="1"
                     app:srcCompat="@drawable/bottom_btn1"
                     app:tint="@color/gray" />
 
@@ -295,7 +294,7 @@
                     android:id="@+id/homeTx"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/app_name"
+                    android:text="Home"
                     android:textAlignment="center"
                     android:textColor="@color/gray"
                     android:textSize="14sp" />
@@ -321,7 +320,7 @@
                     android:id="@+id/profileTx"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/app_name"
+                    android:text="Profile"
                     android:textAlignment="center"
                     android:textColor="@color/gray"
                     android:textSize="14sp" />
