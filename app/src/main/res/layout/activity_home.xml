@@ -287,7 +287,6 @@
                     android:layout_height="32dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="3dp"
-                    android:layout_weight="1"
                     app:srcCompat="@drawable/bottom_btn1"
                     app:tint="@color/gray" />
 
