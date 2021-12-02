@@ -38,6 +38,7 @@ class SignInActivity : AppCompatActivity() {
         signInPassword = etSignInPassword.text.toString().trim()
 
         if (notEmpty()) {
+            // TODO: firebaseAuth.currentUser.uid
             firebaseAuth.signInWithEmailAndPassword(signInEmail, signInPassword)
                 .addOnCompleteListener { signIn ->
                     if (signIn.isSuccessful) {

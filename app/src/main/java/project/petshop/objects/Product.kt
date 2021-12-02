@@ -3,7 +3,6 @@ package project.petshop.objects
 import android.content.Context
 import android.widget.ImageView
 import com.google.android.gms.tasks.Task
-import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.QuerySnapshot
 import com.squareup.picasso.Picasso
@@ -15,7 +14,8 @@ import java.util.*
 class Product() {
     var id : String? = null
     var name: String? = null
-    var description: String? = null
+    var des: String? = null
+    var type: String? = null
     var price: Long? = 0
     var pic: String? = null
     var dateAdded : Date? = null
@@ -23,7 +23,8 @@ class Product() {
     constructor(doc : DocumentSnapshot) : this() {
         id = doc.id
         name = doc.getString("name")
-        description = doc.getString("description")
+        des = doc.getString("des")
+        type = doc.getString("type")
         price = doc.getLong("price")
         pic = doc.getString("pic")
         dateAdded = doc.getDate("dateAdded")
@@ -32,7 +33,8 @@ class Product() {
     fun set() : Task<String> {
         val product = hashMapOf(
             "name" to name,
-            "description" to description,
+            "des" to des,
+            "type" to type,
             "price" to price,
             "pic" to pic
         )
@@ -58,6 +60,12 @@ class Product() {
 
     fun setPic(context : Context, imageView : ImageView) {
         if (pic != null) {
+//            val p = Picasso.get();
+//            p.isLoggingEnabled = true
+//            p.load("https://petprince.vn/multidata/thuc-an-cho-cho-thit-cuu.jpg")
+//                .placeholder(R.drawable.ic_error)
+//                .into(imageView)
+
             // Get download url, and let Picasso load the image url into imageView
             FirebaseUtils.storage.getReferenceFromUrl(pic!!).downloadUrl
                 .addOnSuccessListener { uri ->

@@ -2,16 +2,12 @@ package project.petshop.views
 
 import android.content.Context
 import android.os.Bundle
-import android.text.Editable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
-import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.product_information.*
 import project.petshop.R
-import project.petshop.adapters.ProductAdapter
 import project.petshop.extensions.Extensions.toast
 import project.petshop.objects.Product
-import java.lang.Math.abs
 
 class ProductDetailsActivity : AppCompatActivity() {
     var product : Product? = null
@@ -29,7 +25,7 @@ class ProductDetailsActivity : AppCompatActivity() {
                 titleTxt.text = product!!.name
                 priceTxt.text = product!!.price.toString()
                 product!!.setPic(this, foodPic)
-                descriptionTxt.text = product!!.description
+                descriptionTxt.text = product!!.des
 
                 minusBtn.setOnClickListener {
                     if (numberOrderTxt.text.isEmpty()) {
@@ -70,7 +66,7 @@ class ProductDetailsActivity : AppCompatActivity() {
 
                 textView15.setOnClickListener {
                     val id = product!!.id!!
-                    val sharedPref = getPreferences(Context.MODE_PRIVATE)
+                    val sharedPref = getSharedPreferences("CART", Context.MODE_PRIVATE)
                     var cart : Set<String>? = null
 
                     // Get data from SharedPreferences
