@@ -29,6 +29,17 @@ class HomeActivity : AppCompatActivity() {
 //            finish()
 //        }
 
+        /////// Dat su dụng bức ảnh này thay thế nút đề xuất khi nào có mọi người chỉnh lại nha
+        imageView3.setOnClickListener{
+            Intent(this,ModelActivity::class.java).also{
+                startActivity(it)
+            }
+        }/////////
+
+        cart_btn.setOnClickListener {
+            startActivity(Intent(this, CartActivity::class.java))
+        }
+
         adapterQuickView = ProductAdapter(this, R.layout.viewholder_cat, products)
         adapterPopular = ProductAdapter(this, R.layout.viewholder_popular, popular)
         recyclerViewQuickView.adapter = adapterQuickView
@@ -41,6 +52,7 @@ class HomeActivity : AppCompatActivity() {
                     val product = Product(doc)
                     products.add(product)
                     adapterQuickView!!.notifyItemInserted(products.size - 1)
+                    adapterQuickView!!.notifyDataSetChanged()
                 }
             }
 

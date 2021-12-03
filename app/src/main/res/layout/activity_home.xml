@@ -255,7 +255,7 @@
 
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/card_btn"
+            android:id="@+id/cart_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/orange"
@@ -287,7 +287,6 @@
                     android:layout_height="32dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="3dp"
-                    android:layout_weight="1"
                     app:srcCompat="@drawable/bottom_btn1"
                     app:tint="@color/gray" />
 
