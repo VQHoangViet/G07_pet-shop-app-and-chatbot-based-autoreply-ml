@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="project.petshop">
+
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-feature android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,8 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Petshop">
-
-<!-- Launcher -->
+        <activity
+            android:name=".views.ModelActivity"
+            android:exported="false" />
+        <!-- Launcher -->
         <activity
             android:name=".views.HomeActivity"
             android:exported="true">
@@ -20,20 +28,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".views.ProductDetailsActivity"
-            android:exported="true">
-        </activity>
-<!---->
-<!--        <activity-->
-<!--            android:name=".views.HomeActivity"-->
-<!--            android:exported="true" />-->
-
-<!--        <activity-->
-<!--            android:name=".views.CreateAccountActivity"-->
-<!--            android:exported="true" />-->
-
+            android:exported="true"></activity>
     </application>
 
 </manifest>
