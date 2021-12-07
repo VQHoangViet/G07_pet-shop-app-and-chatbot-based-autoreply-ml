@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true">
 
         <ImageView
             android:id="@+id/logo_lgi"
@@ -26,18 +27,18 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
-        app:layout_constraintVertical_bias="1.0">
+        android:elevation="5dp"
+        android:layout_below="@id/constraintLayout2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true">
 
         <TextView
             android:id="@+id/text_welcome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:text="@string/welcome"
             android:textAlignment="center"
             android:textColor="@color/black"
@@ -70,40 +71,59 @@
             android:inputType="textWebPassword"
             android:textAlignment="center" />
 
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/btnSignIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="48dp"
+                android:background="@drawable/btn_login"
+                android:text="Sign in"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/btnSignIn"
+                android:layout_alignStart="@id/btnSignIn"
+                android:layout_alignEnd="@id/btnSignIn"
+                android:layout_alignBottom="@id/btnSignIn"
+                android:elevation="5dp"
+                android:alpha=".25"
+                android:background="@color/white" />
+        </RelativeLayout>
+
         <TextView
             android:id="@+id/fg_pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Forget Your Password? Recovery it"
+            android:layout_marginBottom="32dp"
+            android:text="Forgot Your Password?"
             android:textAlignment="center"
-            android:textSize="14sp"
-            tools:layout_margin="10dp" />
-
-        <Button
-            android:id="@+id/btnSignIn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"
-            android:background="@drawable/btn_login"
-            android:text="Sign in"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:visibility="gone"
             android:text="Or"
             android:textAlignment="center" />
 
         <Button
-            android:id="@+id/btnCreateAccount2"
-            android:layout_width="match_parent"
+            android:id="@+id/btnCreateAccount"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center_horizontal"
+            android:paddingHorizontal="48dp"
             android:background="@drawable/btn_login"
             android:text="create account"
             android:textColor="@color/white"
@@ -115,11 +135,9 @@
         android:id="@+id/constraintLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.45">
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true">
 
         <ImageView
             android:id="@+id/thumbnail"
@@ -133,4 +151,4 @@
             app:srcCompat="@drawable/bottombackground" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

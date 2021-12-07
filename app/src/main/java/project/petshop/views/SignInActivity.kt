@@ -21,9 +21,8 @@ class SignInActivity : AppCompatActivity() {
         setContentView(R.layout.activity_sign_in)
 
         signInInputsArray = arrayOf(etSignInEmail, etSignInPassword)
-        btnCreateAccount2.setOnClickListener {
+        btnCreateAccount.setOnClickListener {
             startActivity(Intent(this, CreateAccountActivity::class.java))
-            finish()
         }
 
         btnSignIn.setOnClickListener {
@@ -36,25 +35,30 @@ class SignInActivity : AppCompatActivity() {
     private fun signInUser() {
         signInEmail = etSignInEmail.text.toString().trim()
         signInPassword = etSignInPassword.text.toString().trim()
+        btnSignIn.isEnabled = false
+        btnCreateAccount.isEnabled = false
 
         if (notEmpty()) {
-            // TODO: firebaseAuth.currentUser.uid
             firebaseAuth.signInWithEmailAndPassword(signInEmail, signInPassword)
                 .addOnCompleteListener { signIn ->
                     if (signIn.isSuccessful) {
-                        startActivity(Intent(this, HomeActivity::class.java))
-                        toast("signed in successfully")
+                        // startActivity(Intent(this, HomeActivity::class.java))
+                        toast(getString(R.string.sign_in_success))
                         finish()
                     } else {
-                        toast("sign in failed")
+                        toast(getString(R.string.sign_in_failed))
+                        btnSignIn.isEnabled = true
+                        btnCreateAccount.isEnabled = true
                     }
                 }
         } else {
             signInInputsArray.forEach { input ->
                 if (input.text.toString().trim().isEmpty()) {
-                    input.error = "${input.hint} is required"
+                    input.error = getString(R.string.required, input.hint)
                 }
             }
+            btnSignIn.isEnabled = true
+            btnCreateAccount.isEnabled = true
         }
     }
 }

@@ -37,6 +37,15 @@
         <activity
             android:name=".views.CartActivity"
             android:exported="true"/>
+        <activity
+            android:name=".views.ProfileActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".views.SignInActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".views.CreateAccountActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>
