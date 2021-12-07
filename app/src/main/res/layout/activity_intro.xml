@@ -46,10 +46,10 @@
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Get Started"
+            android:text="@string/get_started"
+            android:textColor="@color/white"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:textColor="@color/white"
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

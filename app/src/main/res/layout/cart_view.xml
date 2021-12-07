@@ -90,21 +90,21 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginStart="16dp"
-                android:text="Total"
+                android:layout_weight="1"
+                android:text="@string/total"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
                 android:gravity="center"
-                android:text="$"
-                android:textSize="18sp"
-                android:textColor="@color/red" />
+                android:text="@string/money_symbol"
+                android:textColor="@color/red"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/categoryTotal"
@@ -135,12 +135,12 @@
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toStartOf="@id/categoryPrice"
         android:layout_alignBottom="@id/categoryPrice"
         android:layout_marginEnd="4dp"
+        android:layout_toStartOf="@id/categoryPrice"
         android:gravity="center"
-        android:text="$"
-        android:textSize="18sp"
-        android:textColor="@color/red" />
+        android:text="@string/money_symbol"
+        android:textColor="@color/red"
+        android:textSize="18sp" />
 
 </RelativeLayout>

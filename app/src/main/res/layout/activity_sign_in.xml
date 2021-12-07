@@ -18,6 +18,7 @@
             android:id="@+id/logo_lgi"
             android:layout_width="wrap_content"
             android:layout_height="130dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -54,7 +55,7 @@
             android:background="@drawable/edit_login"
             android:elevation="3dp"
             android:ems="10"
-            android:hint="Email"
+            android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:textAlignment="center" />
 
@@ -67,23 +68,23 @@
             android:layout_marginEnd="50dp"
             android:background="@drawable/edit_login"
             android:ems="10"
-            android:hint="Password"
+            android:hint="@string/password"
             android:inputType="textWebPassword"
             android:textAlignment="center" />
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_gravity="center_horizontal">
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp">
 
             <Button
                 android:id="@+id/btnSignIn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="48dp"
                 android:background="@drawable/btn_login"
-                android:text="Sign in"
+                android:paddingHorizontal="48dp"
+                android:text="@string/sign_in"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -91,41 +92,32 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@id/btnSignIn"
                 android:layout_alignStart="@id/btnSignIn"
+                android:layout_alignTop="@id/btnSignIn"
                 android:layout_alignEnd="@id/btnSignIn"
                 android:layout_alignBottom="@id/btnSignIn"
-                android:elevation="5dp"
                 android:alpha=".25"
-                android:background="@color/white" />
+                android:background="@color/white"
+                android:elevation="5dp" />
         </RelativeLayout>
 
         <TextView
             android:id="@+id/fg_pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            android:text="Forgot Your Password?"
+            android:layout_marginBottom="20dp"
+            android:text="@string/forgot_your_password"
             android:textAlignment="center"
             android:textSize="14sp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:visibility="gone"
-            android:text="Or"
-            android:textAlignment="center" />
 
         <Button
             android:id="@+id/btnCreateAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_gravity="center_horizontal"
-            android:paddingHorizontal="48dp"
             android:background="@drawable/btn_login"
-            android:text="create account"
+            android:paddingHorizontal="48dp"
+            android:text="@string/create_account"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />

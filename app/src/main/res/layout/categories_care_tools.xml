@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="CARE TOOLS"
+        android:text="@string/care_tool"
         android:textAlignment="center"
         android:textColor="@color/red"
         android:textSize="20sp"

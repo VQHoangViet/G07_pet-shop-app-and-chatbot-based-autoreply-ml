@@ -56,18 +56,19 @@
                   app:srcCompat="@drawable/minus" />
 
                 <EditText
-                  android:id="@+id/numberOrderTxt"
-                  android:layout_width="64dp"
-                  android:layout_height="wrap_content"
-                  android:layout_marginStart="16dp"
-                  android:layout_marginEnd="16dp"
-                  android:inputType="number"
-                  android:text="1"
-                  android:textAlignment="center"
-                  android:textColor="@color/black"
-                  android:textSize="18sp"
-                  android:textStyle="bold"
-                  tools:text="999" />
+                    android:id="@+id/numberOrderTxt"
+                    android:layout_width="64dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:inputType="number"
+                    android:text="1"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:ignore="TouchTargetSizeCheck"
+                    tools:text="999" />
 
                 <ImageView
                   android:id="@+id/plusBtn"
@@ -84,15 +85,15 @@
               android:orientation="vertical">
 
                 <TextView
-                  android:id="@+id/textView5"
-                  android:layout_width="wrap_content"
-                  android:layout_height="23dp"
-                  android:layout_margin="16dp"
-                  android:layout_weight="1"
-                  android:text="Description"
-                  android:textColor="@color/orange"
-                  android:textSize="20sp"
-                  android:textStyle="bold" />
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:layout_margin="16dp"
+                    android:layout_weight="1"
+                    android:text="@string/description"
+                    android:textColor="@color/orange"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
                 <TextView
                   android:id="@+id/descriptionTxt"
@@ -114,19 +115,19 @@
     </ScrollView>
 
     <TextView
-      android:id="@+id/textView15"
-      android:layout_width="0dp"
-      android:layout_height="50dp"
-      android:layout_margin="16dp"
-      android:background="@drawable/orange_bt_background"
-      android:elevation="3dp"
-      android:gravity="center"
-      android:text="Add to cart"
-      android:textColor="@color/white"
-      android:textSize="23sp"
-      android:textStyle="bold"
-      app:layout_constraintBottom_toBottomOf="@+id/scrollView3"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent" />
+        android:id="@+id/textView15"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/orange_bt_background"
+        android:elevation="3dp"
+        android:gravity="center"
+        android:text="@string/add_cart"
+        android:textColor="@color/white"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/scrollView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
