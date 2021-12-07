@@ -3,20 +3,14 @@ package project.petshop.views
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.firestore.DocumentSnapshot
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_home.cart_btn
 import kotlinx.android.synthetic.main.activity_home.profile
 import project.petshop.R
 import project.petshop.adapters.ProductAdapter
-import project.petshop.extensions.Extensions.toast
 import project.petshop.objects.Product
 import project.petshop.objects.User
-import project.petshop.utils.FirebaseUtils
 import project.petshop.utils.FirebaseUtils.firebaseAuth
-import project.petshop.utils.FirebaseUtils.firebaseUser
-import java.text.SimpleDateFormat
-import java.util.*
 import kotlin.collections.ArrayList
 
 class HomeActivity : AppCompatActivity() {
@@ -29,11 +23,7 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        // Check if user is logged in, if not then open Sign in
-        if (firebaseUser == null) {
-            val intent = Intent(this@HomeActivity, SignInActivity::class.java)
-            startActivity(intent)
-        }
+        checkUser()
 
         /////// Dat su dụng bức ảnh này thay thế nút đề xuất khi nào có mọi người chỉnh lại nha
         imageView3.setOnClickListener{
@@ -77,12 +67,35 @@ class HomeActivity : AppCompatActivity() {
                     adapterPopular!!.notifyItemInserted(popular.size - 1)
                 }
             }
+    }
 
-        User.get(firebaseUser!!.uid)
+    private fun checkUser() {
+        // Check if user is logged in, if not then open Sign in
+        if (firebaseAuth.currentUser == null) {
+            val intent = Intent(this, SignInActivity::class.java)
+            startActivity(intent)
+            return
+        }
+
+        // Check if user has data,
+        // if yes, update view with data
+        // if not then open Edit Profile
+        User.get(firebaseAuth.currentUser!!.uid)
             .addOnSuccessListener { docUser ->
+                if (!docUser.exists()) {
+                    val intent = Intent(this, ProfileEditActivity::class.java)
+                    startActivity(intent)
+                    return@addOnSuccessListener
+                }
+
                 val user = User(docUser)
                 textView.text = getString(R.string.hi, user.name)
-                user.setAvatar(this@HomeActivity, avatar)
+                user.setAvatar(this, avatar)
             }
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        checkUser()
     }
 }

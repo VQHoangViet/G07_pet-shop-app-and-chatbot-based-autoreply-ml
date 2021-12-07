@@ -10,7 +10,6 @@ import kotlinx.android.synthetic.main.activity_create_account.*
 import project.petshop.R
 import project.petshop.extensions.Extensions.toast
 import project.petshop.utils.FirebaseUtils.firebaseAuth
-import project.petshop.utils.FirebaseUtils.firebaseUser
 
 class CreateAccountActivity : AppCompatActivity() {
     lateinit var userEmail: String
@@ -91,7 +90,7 @@ class CreateAccountActivity : AppCompatActivity() {
     */
 
     private fun sendEmailVerification() {
-        firebaseUser?.let {
+        firebaseAuth.currentUser?.let {
             it.sendEmailVerification().addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     toast(getString(R.string.email_sent, userEmail))

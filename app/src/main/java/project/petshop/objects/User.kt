@@ -9,6 +9,7 @@ import com.google.firebase.firestore.QuerySnapshot
 import com.squareup.picasso.Picasso
 import project.petshop.R
 import project.petshop.utils.FirebaseUtils
+import project.petshop.utils.FirebaseUtils.storage
 import java.util.*
 
 class User() {
@@ -19,6 +20,19 @@ class User() {
     var email: String? = null
     var gender: Long? = 0
     var address: String? = null
+
+    var songs = ArrayList<String>()
+
+    constructor(uid : String, name : String, dob : Date, phone : String,
+                email : String, gender : Long, address : String) : this() {
+        this.uid = uid
+        this.name = name
+        this.dob = dob
+        this.phone = phone
+        this.email = email
+        this.gender = gender
+        this.address = address
+    }
 
     constructor(doc : DocumentSnapshot) : this() {
         uid = doc.id
@@ -58,11 +72,16 @@ class User() {
         // FIXME: Need to upload *.jpg as avatars only
         val avatar = "gs://petshop-auth.appspot.com/avatars/%s.jpg".format(uid)
         // Get download url, and let Picasso load the image url into imageView
-        FirebaseUtils.storage.getReferenceFromUrl(avatar).downloadUrl
-            .addOnSuccessListener { uri ->
-                Picasso.get().load(uri)
-                    .placeholder(R.drawable.default_avatar)
-                    .into(imageView)
+        val ref = storage.getReferenceFromUrl(avatar)
+            ref.metadata.addOnSuccessListener {
+                ref.downloadUrl
+                    .addOnSuccessListener { uri ->
+                        Picasso.get().load(uri)
+                            .placeholder(R.drawable.default_avatar)
+                            .into(imageView)
+                    }.addOnFailureListener {
+                        Picasso.get().load(R.drawable.default_avatar).into(imageView)
+                    }
             }.addOnFailureListener {
                 Picasso.get().load(R.drawable.default_avatar).into(imageView)
             }

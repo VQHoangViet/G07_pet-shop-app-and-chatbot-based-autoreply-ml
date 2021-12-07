@@ -30,4 +30,8 @@
     <string name="sign_in_success">signed in successfully</string>
     <string name="sign_in_failed">sign in failed</string>
     <string name="hi">Hi %s</string>
+    <string name="quitting_edit_profile">Thoát chỉnh sửa hồ sơ</string>
+    <string name="quitting_edit_profile_confirm">Bạn muốn thoát chỉnh sửa hồ sơ?</string>
+    <string name="yes">Đồng ý</string>
+    <string name="no">Huỷ bỏ</string>
 </resources>

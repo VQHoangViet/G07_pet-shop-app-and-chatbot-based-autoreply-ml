@@ -10,7 +10,6 @@ import project.petshop.R
 import project.petshop.objects.User
 import project.petshop.utils.FirebaseUtils
 import project.petshop.utils.FirebaseUtils.firebaseAuth
-import project.petshop.utils.FirebaseUtils.firebaseUser
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlinx.android.synthetic.main.activity_profile.avatar as avatar1
@@ -26,12 +25,18 @@ class ProfileActivity : AppCompatActivity() {
 
         sign_out.setOnClickListener {
             firebaseAuth.signOut()
-            val intent = Intent(this@ProfileActivity, SignInActivity::class.java)
+            val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
         }
 
-        User.get(firebaseUser!!.uid)
+        User.get(firebaseAuth.currentUser!!.uid)
             .addOnSuccessListener { docUser ->
+                if (!docUser.exists()) {
+                    val intent = Intent(this, ProfileEditActivity::class.java)
+                    startActivity(intent)
+                    return@addOnSuccessListener
+                }
+
                 val user = User(docUser)
                 val _gender : String = when (user.gender.toString()) {
                     "0" -> "Male"

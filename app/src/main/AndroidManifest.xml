@@ -46,6 +46,9 @@
         <activity
             android:name=".views.CreateAccountActivity"
             android:exported="true"/>
+        <activity
+            android:name=".views.ProfileEditActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

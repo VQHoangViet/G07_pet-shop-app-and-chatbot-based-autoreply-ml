@@ -3,6 +3,8 @@ package project.petshop.views
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 /** fix missing imports **/
@@ -40,16 +42,13 @@ class SignInActivity : AppCompatActivity() {
 
         if (notEmpty()) {
             firebaseAuth.signInWithEmailAndPassword(signInEmail, signInPassword)
-                .addOnCompleteListener { signIn ->
-                    if (signIn.isSuccessful) {
-                        // startActivity(Intent(this, HomeActivity::class.java))
-                        toast(getString(R.string.sign_in_success))
-                        finish()
-                    } else {
-                        toast(getString(R.string.sign_in_failed))
-                        btnSignIn.isEnabled = true
-                        btnCreateAccount.isEnabled = true
-                    }
+                .addOnSuccessListener {
+                    toast(getString(R.string.sign_in_success))
+                    onBackPressed()
+                }.addOnFailureListener {
+                    toast(getString(R.string.sign_in_failed))
+                    btnSignIn.isEnabled = true
+                    btnCreateAccount.isEnabled = true
                 }
         } else {
             signInInputsArray.forEach { input ->
