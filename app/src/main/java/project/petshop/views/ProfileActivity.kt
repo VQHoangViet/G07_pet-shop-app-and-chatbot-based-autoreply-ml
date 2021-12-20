@@ -4,12 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_profile.*
 import kotlinx.android.synthetic.main.activity_profile.home
 import project.petshop.R
 import project.petshop.objects.User
-import project.petshop.utils.FirebaseUtils
-import project.petshop.utils.FirebaseUtils.firebaseAuth
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlinx.android.synthetic.main.activity_profile.avatar as avatar1
@@ -23,16 +23,28 @@ class ProfileActivity : AppCompatActivity() {
             onBackPressed()
         }
 
+        editBtn.setOnClickListener {
+            val intent = Intent(this, ProfileEditActivity::class.java)
+            startActivity(intent)
+        }
+
         sign_out.setOnClickListener {
-            firebaseAuth.signOut()
+            Firebase.auth.signOut()
             val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
         }
 
-        User.get(firebaseAuth.currentUser!!.uid)
+        refresh()
+    }
+
+    private fun refresh() {
+        User.get(Firebase.auth.currentUser!!.uid)
             .addOnSuccessListener { docUser ->
                 if (!docUser.exists()) {
                     val intent = Intent(this, ProfileEditActivity::class.java)
+                    val bundle = Bundle()
+                    bundle.putBoolean("emailEdit", false)
+                    intent.putExtras(bundle)
                     startActivity(intent)
                     return@addOnSuccessListener
                 }
@@ -53,6 +65,11 @@ class ProfileActivity : AppCompatActivity() {
                 gender.text = _gender
                 address.text = user.address
             }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        refresh()
     }
 
     override fun onBackPressed() {

@@ -47,6 +47,10 @@
         <entry key="..\:/Users/lamtr/OneDrive/Desktop/WorkSpace_HoangViet/petshopADproject/petshop_ADproject/app/src/main/res/layout/activity_sign_in.xml" value="0.33" />
         <entry key="..\:/Users/lamtr/OneDrive/Desktop/WorkSpace_HoangViet/petshopADproject/petshop_ADproject/app/src/main/res/layout/login.xml" value="0.21875" />
         <entry key="..\:/Users/lamtr/OneDrive/Desktop/WorkSpace_HoangViet/petshopADproject/petshop_ADproject/app/src/main/res/layout/signup.xml" value="0.21875" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.2518518518518518" />
+        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.2518518518518518" />
+        <entry key="app/src/main/res/layout/activity_profile_edit.xml" value="0.2518518518518518" />
+        <entry key="app/src/main/res/layout/view_login_dialog.xml" value="0.5" />
       </map>
     </option>
   </component>

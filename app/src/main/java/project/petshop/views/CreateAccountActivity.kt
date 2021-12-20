@@ -6,10 +6,11 @@ import android.os.Bundle
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_create_account.*
 import project.petshop.R
 import project.petshop.extensions.Extensions.toast
-import project.petshop.utils.FirebaseUtils.firebaseAuth
 
 class CreateAccountActivity : AppCompatActivity() {
     lateinit var userEmail: String
@@ -35,7 +36,7 @@ class CreateAccountActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        val user: FirebaseUser? = firebaseAuth.currentUser
+        val user: FirebaseUser? = Firebase.auth.currentUser
         user?.let {
             startActivity(Intent(this, HomeActivity::class.java))
             toast(getString(R.string.welcome_back))
@@ -71,7 +72,7 @@ class CreateAccountActivity : AppCompatActivity() {
             userPassword = etPassword.text.toString().trim()
 
             /*create a user*/
-            firebaseAuth.createUserWithEmailAndPassword(userEmail, userPassword)
+            Firebase.auth.createUserWithEmailAndPassword(userEmail, userPassword)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         toast(getString(R.string.create_acc_success))
@@ -90,7 +91,7 @@ class CreateAccountActivity : AppCompatActivity() {
     */
 
     private fun sendEmailVerification() {
-        firebaseAuth.currentUser?.let {
+        Firebase.auth.currentUser?.let {
             it.sendEmailVerification().addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     toast(getString(R.string.email_sent, userEmail))

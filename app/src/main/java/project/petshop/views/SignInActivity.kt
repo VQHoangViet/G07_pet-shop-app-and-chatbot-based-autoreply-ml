@@ -7,11 +7,12 @@ import android.os.Handler
 import android.os.Looper
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 /** fix missing imports **/
 import kotlinx.android.synthetic.main.activity_sign_in.*
 import project.petshop.R
 import project.petshop.extensions.Extensions.toast
-import project.petshop.utils.FirebaseUtils.firebaseAuth
 
 class SignInActivity : AppCompatActivity() {
     lateinit var signInEmail: String
@@ -41,7 +42,7 @@ class SignInActivity : AppCompatActivity() {
         btnCreateAccount.isEnabled = false
 
         if (notEmpty()) {
-            firebaseAuth.signInWithEmailAndPassword(signInEmail, signInPassword)
+            Firebase.auth.signInWithEmailAndPassword(signInEmail, signInPassword)
                 .addOnSuccessListener {
                     toast(getString(R.string.sign_in_success))
                     onBackPressed()

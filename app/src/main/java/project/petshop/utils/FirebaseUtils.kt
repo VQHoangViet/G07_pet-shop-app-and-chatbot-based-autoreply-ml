@@ -9,8 +9,6 @@ import com.google.firebase.storage.ktx.storage
 
 @SuppressLint("StaticFieldLeak")
 object FirebaseUtils {
-    val firebaseAuth: FirebaseAuth = Firebase.auth
-
     val db = Firebase.firestore
     val storage = Firebase.storage
 }
