@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_profile.*
 import kotlinx.android.synthetic.main.activity_profile.home
 import project.petshop.R
@@ -58,6 +59,7 @@ class ProfileActivity : AppCompatActivity() {
                 val _dob = SimpleDateFormat("dd-MM-yyyy", Locale.ROOT)
                     .format(user.dob!!)
 
+                user.setAvatar(this, avatar)
                 name.text = user.name
                 dob.text = _dob
                 phone.text = user.phone

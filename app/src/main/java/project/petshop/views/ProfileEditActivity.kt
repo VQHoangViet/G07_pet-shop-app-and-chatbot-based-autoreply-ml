@@ -13,12 +13,14 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.StorageMetadata
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_profile.address
 import kotlinx.android.synthetic.main.activity_profile.dob
 import kotlinx.android.synthetic.main.activity_profile.email
 import kotlinx.android.synthetic.main.activity_profile.name
 import kotlinx.android.synthetic.main.activity_profile.phone
 import kotlinx.android.synthetic.main.activity_profile_edit.*
+import kotlinx.android.synthetic.main.activity_profile_edit.avatar
 import kotlinx.android.synthetic.main.view_login_dialog.*
 import project.petshop.R
 import project.petshop.extensions.Extensions.toast
@@ -59,6 +61,7 @@ class ProfileEditActivity : AppCompatActivity() {
                 val _dob = SimpleDateFormat("dd-MM-yyyy", Locale.ROOT)
                     .format(user.dob!!)
 
+                user.setAvatar(this, avatar)
                 name.text = user.name
                 dob.text = _dob
                 phone.text = user.phone
