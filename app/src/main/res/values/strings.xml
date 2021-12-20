@@ -31,7 +31,7 @@
     <string name="required">%s bắt buộc</string>
     <string name="sign_in_success">Đăng nhập thành công !</string>
     <string name="sign_in_failed">Đăng nhập không thành công !</string>
-    <string name="hi">Xin chào %s</string>
+    <string name="hi">Xin chào \n%s</string>
     <string name="quitting_edit_profile">Thoát chỉnh sửa hồ sơ</string>
     <string name="quitting_edit_profile_confirm">Bạn muốn thoát chỉnh sửa hồ sơ?</string>
     <string name="yes">Đồng ý</string>
@@ -57,5 +57,9 @@
     <string name="description">Thông tin</string>
     <string name="add_cart">Thêm vào giỏ hàng</string>
     <string name="banner_text_1">Tìm hiểu thú cưng của bạn!</string>
-    <string name="banner_text_2">Xem ngay</string>
+    <string name="banner_text_2">TRY NOW !!!</string>
+    <string name="item_total">Tổng tiền</string>
+    <string name="shipping_fee">Phí vận chuyển</string>
+    <string name="check_out">THANH TOÁN</string>
+
 </resources>

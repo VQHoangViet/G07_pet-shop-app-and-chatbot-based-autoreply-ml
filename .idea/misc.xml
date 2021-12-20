@@ -5,6 +5,9 @@
       <map>
         <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/drawable-xhdpi/category_background2.xml" value="0.17533783783783785" />
         <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/drawable-xhdpi/category_background3.xml" value="0.17533783783783785" />
+        <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/drawable/bt_ads.xml" value="0.15486111111111112" />
+        <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/drawable/bt_ads_2.xml" value="0.17533783783783785" />
+        <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/drawable/btn_login.xml" value="0.17533783783783785" />
         <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/drawable/card_background.xml" value="0.17533783783783785" />
         <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/drawable/category_background.xml" value="0.17533783783783785" />
         <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/drawable/category_background2.xml" value="0.17533783783783785" />
@@ -16,13 +19,14 @@
         <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/drawable/viewholder_cat.xml" value="0.17533783783783785" />
         <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/layout/activity_cart.xml" value="0.16486486486486487" />
         <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/layout/activity_create_account.xml" value="0.176" />
-        <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/layout/activity_home.xml" value="0.176" />
+        <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/layout/activity_home.xml" value="0.24596774193548387" />
         <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/layout/activity_intro.xml" value="0.176" />
         <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/layout/activity_main.xml" value="0.19322916666666667" />
         <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/layout/activity_model.xml" value="0.16486486486486487" />
         <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/layout/activity_profile.xml" value="0.164275956284153" />
         <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/layout/activity_profile_edit.xml" value="0.13524590163934427" />
         <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/layout/activity_sign_in.xml" value="0.176" />
+        <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/layout/bt_ads.xml" value="0.16486486486486487" />
         <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/layout/cart_view.xml" value="0.16486486486486487" />
         <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/layout/categories_care_tools.xml" value="0.16486486486486487" />
         <entry key="..\:/Android_WS/petshop_ADproject/app/src/main/res/layout/categories_dry_grain_food.xml" value="0.16486486486486487" />
