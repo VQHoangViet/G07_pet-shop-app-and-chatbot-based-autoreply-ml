@@ -1,14 +1,18 @@
 package project.petshop.views
 
 import android.app.DatePickerDialog
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.widget.EditText
+import androidx.activity.result.contract.ActivityResultContracts.OpenDocument
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.StorageMetadata
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_profile.address
 import kotlinx.android.synthetic.main.activity_profile.dob
 import kotlinx.android.synthetic.main.activity_profile.email
@@ -19,11 +23,13 @@ import kotlinx.android.synthetic.main.view_login_dialog.*
 import project.petshop.R
 import project.petshop.extensions.Extensions.toast
 import project.petshop.objects.User
+import project.petshop.utils.FirebaseUtils
 import java.text.SimpleDateFormat
 import java.util.*
 
 class ProfileEditActivity : AppCompatActivity() {
     val cal: Calendar = Calendar.getInstance()
+    var uri : Uri? = null
     var profileUpdated : Boolean = true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,7 +47,7 @@ class ProfileEditActivity : AppCompatActivity() {
         }
         var old_email : String? = null
 
-            // Update form with Firestore data
+        // Update form with Firestore data
         User.get(Firebase.auth.currentUser!!.uid)
             .addOnSuccessListener { docUser ->
                 profileUpdated = docUser.exists()
@@ -68,6 +74,20 @@ class ProfileEditActivity : AppCompatActivity() {
                 }
                 address.text = user.address
             }
+
+        // Init file chooser activity
+        val pickerLauncher = registerForActivityResult(
+            OpenDocument()
+        ) { result ->
+            if (result == null) {
+                return@registerForActivityResult
+            }
+            uri = result
+            Picasso.get().load(uri).into(avatar)
+        }
+        avatar.setOnClickListener {
+            pickerLauncher.launch(arrayOf("image/*"))
+        }
 
         // Open date dialog when click dob
         val format = SimpleDateFormat("dd-MM-yyyy", Locale.ROOT)
@@ -123,14 +143,7 @@ class ProfileEditActivity : AppCompatActivity() {
                                 .signInWithEmailAndPassword(old_email!!, pass)
                                 .addOnSuccessListener {
                                     it.user!!.updateEmail(email)
-                                    .addOnSuccessListener {
-                                        User(Firebase.auth.currentUser!!.uid,
-                                            name, cal.time, phone, email,
-                                            gender, address).set()!!
-                                            .addOnSuccessListener {
-                                                finish()
-                                            }
-                                    }
+                                    .addOnSuccessListener { uploadData(name, phone, email, gender, address) }
                                     .addOnFailureListener {
                                         toast(getString(R.string.email_exist))
                                         it.printStackTrace()
@@ -147,14 +160,24 @@ class ProfileEditActivity : AppCompatActivity() {
                     .show()
 
             } else {
-                User(Firebase.auth.currentUser!!.uid,
-                    name, cal.time, phone, email,
-                    gender, address).set()!!
-                    .addOnSuccessListener {
-                        finish()
-                    }
+                uploadData(name, phone, email, gender, address)
             }
         }
+    }
+
+    private fun uploadData(name: String, phone: String, email: String, gender: Long, address: String) {
+        User(Firebase.auth.currentUser!!.uid,
+            name, cal.time, phone,
+            email, gender, address).set()!!
+            .addOnSuccessListener {
+                if (uri != null) {
+                    val ref = FirebaseUtils.storage.reference.child(
+                        "avatars/" + Firebase.auth.currentUser!!.uid + ".jpg")
+                    Log.i("TAG", "uploadData: " + ref.path)
+                    ref.putFile(uri!!)
+                }
+                finish()
+            }
     }
 
     override fun onBackPressed() {

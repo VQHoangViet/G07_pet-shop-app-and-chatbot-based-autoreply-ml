@@ -43,8 +43,8 @@
             android:layout_centerInParent="true"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="20dp"
-            android:src="@drawable/default_avatar"
-            app:shapeAppearanceOverlay="@style/Theme.Petshop.CircularImageView"/>
+            android:scaleType="centerCrop"
+            android:src="@drawable/default_avatar" app:shapeAppearanceOverlay="@style/Theme.Petshop.CircularImageView"/>
     </RelativeLayout>
 
     <LinearLayout
