@@ -46,6 +46,13 @@ class HomeActivity : AppCompatActivity() {
             }
         }
 
+        avatar.setOnClickListener {
+            Intent(this, ProfileActivity::class.java).also {
+                startActivity(it)
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+            }
+        }
+
         see_more.setOnClickListener {
             Intent(this, SeeMoreActivity::class.java).also {
                 startActivity(it)
