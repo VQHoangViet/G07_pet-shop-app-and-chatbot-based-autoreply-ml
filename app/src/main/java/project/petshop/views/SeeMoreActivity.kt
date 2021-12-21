@@ -33,6 +33,14 @@ class SeeMoreActivity : AppCompatActivity() {
             toolbar.title = type
             Product.getByType(type)
                 .addOnSuccessListener { addData(it) }
+        } else if (extras.containsKey("tag")) {
+            val tag = extras.getString("tag")!!
+            toolbar.title = tag.uppercase()
+            Product.getByTag(tag)
+                .addOnSuccessListener {
+                    products.addAll(it)
+                    adapter!!.notifyDataSetChanged()
+                }
         }
     }
 

@@ -16,6 +16,7 @@ class Product() {
     var name: String? = null
     var des: String? = null
     var type: String? = null
+    var tag: String? = null
     var price: Long? = 0
     var pic: String? = null
     var dateAdded : Date? = null
@@ -25,6 +26,7 @@ class Product() {
         name = doc.getString("name")
         des = doc.getString("des")
         type = doc.getString("type")
+        tag = doc.getString("tag")
         price = doc.getLong("price")
         pic = doc.getString("pic")
         dateAdded = doc.getDate("dateAdded")
@@ -35,6 +37,7 @@ class Product() {
             "name" to name,
             "des" to des,
             "type" to type,
+            "tag" to tag,
             "price" to price,
             "pic" to pic
         )
@@ -102,6 +105,27 @@ class Product() {
             return FirebaseUtils.db
                 .collection(collection)
                 .whereEqualTo("type", type.lowercase()).get()
+        }
+
+        fun getByTag(tag : String) : Task<ArrayList<Product>> {
+            return get().continueWith {
+                val list = ArrayList<Product>()
+
+                if (!it.isSuccessful) {
+                    return@continueWith list
+                }
+
+                val documents = it.result.documents
+                for (doc in documents) {
+                    val product = Product(doc)
+                    if (product.tag != null) {
+                        if (product.tag!!.contains(tag)) {
+                            list.add(Product(doc))
+                        }
+                    }
+                }
+                return@continueWith list
+            }
         }
     }
 }

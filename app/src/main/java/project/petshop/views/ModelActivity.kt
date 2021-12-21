@@ -9,11 +9,11 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import kotlinx.android.synthetic.main.activity_model.*
 import org.tensorflow.lite.DataType
-import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import project.petshop.R
 import project.petshop.ml.ModelUnquant
@@ -44,12 +44,6 @@ class ModelActivity : AppCompatActivity() {
                 it.type = "image/*"
                 startActivityForResult(it, REQUEST_GALLERY)
             }
-        }
-        //Press Camera bnt
-        Camera.setOnClickListener {
-            detect.text =""
-            requestPermisson()
-            TakePictureIntent()
         }
         //Press Recommend bnt
         recommend.setOnClickListener {
@@ -93,8 +87,24 @@ class ModelActivity : AppCompatActivity() {
                     for (i in 0..20) {
                         val label: String = reader.readLine()!!
                         val probability = probabilities.get(i)!!
+                        Log.i("TAG", "onCreate: $probability to be $label")
                         if (probability==max){
-                            detect.text = label.toString()
+                            detect.text = label
+
+                            //Press See recommend btn
+                            see_recommend.setOnClickListener {
+                                Intent(this, SeeMoreActivity::class.java).apply {
+                                    putExtras(Bundle().also {
+                                        if (label.lowercase().contains("dog")) {
+                                            it.putString("tag", "dog")
+                                        } else {
+                                            it.putString("tag", "cat")
+                                        }
+                                    })
+                                    startActivity(this)
+                                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+                                }
+                            }
                         }
                     }
                 } catch (e: Exception) {
@@ -189,8 +199,3 @@ class ModelActivity : AppCompatActivity() {
     }
 
 }
-
-
-
-
-

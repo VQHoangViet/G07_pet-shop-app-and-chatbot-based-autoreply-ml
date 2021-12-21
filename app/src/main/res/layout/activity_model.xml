@@ -18,11 +18,11 @@
         app:titleCentered="true" app:titleTextAppearance="@style/ToolbarTitleText"/>
 
     <Button
-        android:id="@+id/Camera"
+        android:id="@+id/gallery"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:text="Camera"
+        android:text="@string/gallery"
         android:textColor="@color/orange"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/recommend"
@@ -45,11 +45,11 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
-        android:id="@+id/gallery"
+        android:id="@+id/see_recommend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:text="gallery"
+        android:text="@string/recommend"
         android:textColor="@color/orange"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,12 +64,12 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:backgroundTint="@color/orange"
-        android:text="find"
+        android:text="@string/detect"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/gallery"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/Camera"
+        app:layout_constraintStart_toEndOf="@+id/see_recommend"
         app:layout_constraintTop_toBottomOf="@+id/detect"
         app:layout_constraintVertical_bias="0.507" />
 

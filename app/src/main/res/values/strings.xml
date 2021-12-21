@@ -68,4 +68,7 @@
     <string name="see_more"><![CDATA[Xem thêm >]]></string>
     <string name="cart">Giỏ Hàng</string>
     <string name="all_product">Tất cả Sản phẩm</string>
+    <string name="recommend">Đề xuất</string>
+    <string name="gallery">Chọn ảnh</string>
+    <string name="detect">Nhận dạng</string>
 </resources>
