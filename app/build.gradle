@@ -74,4 +74,7 @@ dependencies {
 
     // Also declare the dependency for the TensorFlow Lite library and specify its version
     implementation 'org.tensorflow:tensorflow-lite:2.7.0'
+
+    // Smart replies
+    implementation 'com.google.mlkit:smart-reply:16.2.0'
 }

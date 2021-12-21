@@ -23,6 +23,9 @@
         android:theme="@style/Theme.Petshop"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".views.SmartRepliesActivity"
+            android:exported="true"/>
+        <activity
             android:name=".views.SplashActivity"
             android:exported="true">
             <intent-filter>

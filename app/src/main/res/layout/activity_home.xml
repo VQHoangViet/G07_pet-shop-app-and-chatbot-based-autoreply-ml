@@ -7,8 +7,6 @@
     style="@style/Widget.MaterialComponents.BottomAppBar"
     android:focusable="true"
     android:focusableInTouchMode="true">
-
-
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
@@ -234,19 +232,19 @@
     </androidx.core.widget.NestedScrollView>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/app_bar"
+            style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
             android:layout_gravity="bottom"
             android:backgroundTint="@color/white"
-            android:id="@+id/app_bar"
             app:fabCradleMargin="8dp"
             app:fabCradleRoundedCornerRadius="50dp"
             app:fabCradleVerticalOffset="6dp">
@@ -257,13 +255,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/orange"
+            android:contentDescription="false"
             android:elevation="3dp"
             android:src="@drawable/shopping_cart"
             app:backgroundTint="@color/orange"
             app:layout_anchor="@id/app_bar"
             app:maxImageSize="30dp"
-            app:tint="@color/white"
-            android:contentDescription="false"/>
+            app:tint="@color/white"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -286,7 +284,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="3dp"
                     app:srcCompat="@drawable/bottom_btn1"
-                    app:tint="?colorAccent" />
+                    app:tint="?colorAccent"/>
 
                 <TextView
                     android:id="@+id/homeTx"
@@ -295,7 +293,7 @@
                     android:text="@string/home"
                     android:textAlignment="center"
                     android:textColor="@color/gray"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"/>
             </LinearLayout>
 
             <LinearLayout
@@ -312,7 +310,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="3dp"
                     app:srcCompat="@drawable/bottom_btn2"
-                    app:tint="@color/gray" />
+                    app:tint="@color/gray"/>
 
                 <TextView
                     android:id="@+id/profileTx"
@@ -321,8 +319,17 @@
                     android:text="@string/Profile"
                     android:textAlignment="center"
                     android:textColor="@color/gray"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"/>
             </LinearLayout>
         </LinearLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_marginEnd="16dp"
+        android:backgroundTint="?attr/colorPrimary" android:clickable="true"
+        app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout"
+        app:layout_constraintEnd_toEndOf="parent" app:srcCompat="@android:drawable/sym_action_chat"
+        android:contentDescription="Chat"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

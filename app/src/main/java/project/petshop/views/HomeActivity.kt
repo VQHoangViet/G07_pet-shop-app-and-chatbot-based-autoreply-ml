@@ -60,6 +60,13 @@ class HomeActivity : AppCompatActivity() {
             }
         }
 
+        floatingActionButton.setOnClickListener {
+            Intent(this, SmartRepliesActivity::class.java).also {
+                startActivity(it)
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+            }
+        }
+
         // Press home to scroll to top
         home.setOnClickListener {
             scrollView2.smoothScrollTo(0, 0)
