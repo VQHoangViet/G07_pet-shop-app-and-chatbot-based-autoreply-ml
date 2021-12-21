@@ -21,23 +21,25 @@
         android:id="@+id/Camera"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
         android:text="Camera"
         android:textColor="@color/orange"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/recommend"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/detect" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="305dp"
-        android:layout_height="332dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/background_intro"
-        app:layout_constraintBottom_toTopOf="@+id/Camera"
+        android:layout_width="386dp"
+        android:layout_height="428dp"
+        android:layout_marginTop="32dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/chomeomodel"
+        app:layout_constraintBottom_toTopOf="@+id/detect"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
@@ -46,36 +48,41 @@
         android:id="@+id/gallery"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
         android:text="gallery"
         android:textColor="@color/orange"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/recommend"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/detect"
+        app:layout_constraintVertical_bias="0.507" />
 
     <Button
         android:id="@+id/recommend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="find"
+        android:layout_marginBottom="24dp"
         android:backgroundTint="@color/orange"
+        android:text="find"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/gallery"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/Camera"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/detect"
+        app:layout_constraintVertical_bias="0.507" />
+
     <TextView
         android:id="@+id/detect"
-        android:layout_width="312dp"
-        android:layout_height="70dp"
+        android:layout_width="354dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp"
         android:hint="Detect"
-        android:textSize="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/Camera"
+        android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintBottom_toTopOf="@+id/recommend"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

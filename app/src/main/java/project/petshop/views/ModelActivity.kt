@@ -90,19 +90,19 @@ class ModelActivity : AppCompatActivity() {
                         InputStreamReader(assets.open("labels.txt"))
                     )
                     val max = probabilities.maxOf {it}
-                    for (i in 0..3) {
-                        val label: String = reader.readLine()
-                        val probability = probabilities.get(i)
+                    for (i in 0..20) {
+                        val label: String = reader.readLine()!!
+                        val probability = probabilities.get(i)!!
                         if (probability==max){
                             detect.text = label.toString()
                         }
                     }
                 } catch (e: Exception) {
-                    Toast.makeText(this, "$e",Toast.LENGTH_LONG).show()
+//                    Toast.makeText(this, "1+$e",Toast.LENGTH_LONG).show()
                 }
                 model.close()
             }catch (e: Exception){
-                Toast.makeText(this, "$e",Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "2+$e",Toast.LENGTH_LONG).show()
             }
         }
     }
