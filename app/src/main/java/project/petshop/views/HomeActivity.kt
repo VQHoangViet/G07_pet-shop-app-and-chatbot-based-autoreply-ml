@@ -27,7 +27,7 @@ class HomeActivity : AppCompatActivity() {
         checkUser()
 
         /////// Dat su dụng bức ảnh này thay thế nút đề xuất khi nào có mọi người chỉnh lại nha
-        constraintLayout.setOnClickListener{
+        ads.setOnClickListener{
             Intent(this,ModelActivity::class.java).also{
                 startActivity(it)
             }

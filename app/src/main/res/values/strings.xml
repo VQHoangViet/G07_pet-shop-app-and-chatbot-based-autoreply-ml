@@ -57,9 +57,12 @@
     <string name="description">Thông tin</string>
     <string name="add_cart">Thêm vào giỏ hàng</string>
     <string name="banner_text_1">Tìm hiểu thú cưng của bạn!</string>
-    <string name="banner_text_2">Xem ngay</string>
+    <string name="banner_text_2">TRY NOW !!!</string>
     <string name="email_exist">Tài khoản với email này đã tồn tại.</string>
     <string name="login">Đăng nhập</string>
     <string name="email_changing">Bạn đang sắp đổi email đăng nhập</string>
     <string name="email_changing_text">Thao tác này sẽ cần bạn xác thực lại mật khẩu</string>
+    <string name="item_total">Tổng tiền</string>
+    <string name="shipping_fee">Phí vận chuyển</string>
+    <string name="check_out">THANH TOÁN</string>
 </resources>
