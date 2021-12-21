@@ -27,20 +27,35 @@ class HomeActivity : AppCompatActivity() {
         checkUser()
 
         /////// Dat su dụng bức ảnh này thay thế nút đề xuất khi nào có mọi người chỉnh lại nha
-        ads.setOnClickListener{
-            Intent(this,ModelActivity::class.java).also{
+        constraintLayout.setOnClickListener{
+            Intent(this, ModelActivity::class.java).also{
                 startActivity(it)
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             }
         }/////////
 
         cart_btn.setOnClickListener {
             startActivity(Intent(this, CartActivity::class.java))
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
         }
 
         profile.setOnClickListener {
-            val intent = Intent(this@HomeActivity, ProfileActivity::class.java)
-            startActivity(intent)
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+            Intent(this, ProfileActivity::class.java).also {
+                startActivity(it)
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+            }
+        }
+
+        see_more.setOnClickListener {
+            Intent(this, SeeMoreActivity::class.java).also {
+                startActivity(it)
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+            }
+        }
+
+        // Press home to scroll to top
+        home.setOnClickListener {
+            scrollView2.smoothScrollTo(0, 0)
         }
 
         adapterQuickView = ProductAdapter(this, R.layout.viewholder_cat, products)

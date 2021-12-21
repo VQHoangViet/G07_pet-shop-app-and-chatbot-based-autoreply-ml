@@ -18,6 +18,7 @@ import project.petshop.views.ProductDetailsActivity
 
 class ProductAdapter(val context: Context, val layoutId: Int, val products: ArrayList<Product>) :
     RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
+    private val types = ArrayList<String>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         // Create a new view, which defines the UI of the list item
@@ -35,7 +36,16 @@ class ProductAdapter(val context: Context, val layoutId: Int, val products: Arra
         product.setPic(context, categoryPic)
         categoryName.text = product.name
 
-        if (layoutId == R.layout.viewholder_popular) {
+        if (layoutId == R.layout.viewholder_cat) {
+            val type = product.type!!.uppercase()
+            if (!types.contains(type)) {
+                categoryName.text = product.type!!.uppercase()
+                types.add(type)
+            } else {
+                holder.itemView.visibility = View.GONE
+                holder.itemView.layoutParams = RecyclerView.LayoutParams(0, 0)
+            }
+        } else if (layoutId == R.layout.viewholder_popular) {
             val categoryPrice = holder.categoryPrice
             val addBtn = holder.addBtn
 

@@ -157,7 +157,7 @@
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="24dp"
                     android:text="@string/categories"
-                    android:textColor="@color/black"
+                    android:textColor="?colorPrimary"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -169,14 +169,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:clipToPadding="false"
+                    android:orientation="horizontal"
                     android:paddingStart="22dp"
                     android:paddingEnd="22dp"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    android:orientation="horizontal"
-                    tools:listitem="@layout/viewholder_cat"
+                    app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView7">
+                    app:layout_constraintTop_toBottomOf="@+id/textView7"
+                    app:spanCount="2"
+                    tools:listitem="@layout/viewholder_cat">
 
                 </androidx.recyclerview.widget.RecyclerView>
 
@@ -187,11 +188,23 @@
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="24dp"
                     android:text="@string/popular"
-                    android:textColor="@color/black"
+                    android:textColor="?colorPrimary"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/recyclerViewQuickView" />
+
+                <TextView
+                    android:id="@+id/see_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="32dp"
+                    android:text="@string/see_more"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toTopOf="@+id/recyclerViewPopular"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/recyclerViewQuickView"/>
 
                 <androidx.recyclerview.widget.RecyclerView
                   android:id="@+id/recyclerViewPopular"
@@ -273,7 +286,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="3dp"
                     app:srcCompat="@drawable/bottom_btn1"
-                    app:tint="@color/gray" />
+                    app:tint="?colorAccent" />
 
                 <TextView
                     android:id="@+id/homeTx"

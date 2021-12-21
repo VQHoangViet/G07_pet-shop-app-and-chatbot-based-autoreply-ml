@@ -65,4 +65,7 @@
     <string name="item_total">Tổng tiền</string>
     <string name="shipping_fee">Phí vận chuyển</string>
     <string name="check_out">THANH TOÁN</string>
+    <string name="see_more"><![CDATA[Xem thêm >]]></string>
+    <string name="cart">Giỏ Hàng</string>
+    <string name="all_product">Tất cả Sản phẩm</string>
 </resources>
