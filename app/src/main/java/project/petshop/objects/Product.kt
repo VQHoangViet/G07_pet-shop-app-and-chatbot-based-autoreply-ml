@@ -96,5 +96,12 @@ class Product() {
         fun get(id : String) : Task<DocumentSnapshot> {
             return FirebaseUtils.db.collection(collection).document(id).get()
         }
+
+        fun getByType(type : String) : Task<QuerySnapshot> {
+            // FIXME: Type on Firebase must be all lowercase
+            return FirebaseUtils.db
+                .collection(collection)
+                .whereEqualTo("type", type.lowercase()).get()
+        }
     }
 }

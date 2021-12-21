@@ -15,6 +15,7 @@ import project.petshop.R
 import project.petshop.objects.Product
 import project.petshop.views.CartActivity
 import project.petshop.views.ProductDetailsActivity
+import project.petshop.views.SeeMoreActivity
 
 class ProductAdapter(val context: Context, val layoutId: Int, val products: ArrayList<Product>) :
     RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
@@ -41,10 +42,19 @@ class ProductAdapter(val context: Context, val layoutId: Int, val products: Arra
             if (!types.contains(type)) {
                 categoryName.text = product.type!!.uppercase()
                 types.add(type)
+                holder.itemView.setOnClickListener {
+                    Intent(context, SeeMoreActivity::class.java).apply {
+                        putExtras(Bundle().also { it.putString("type", type) })
+                        context.startActivity(this)
+                        (context as AppCompatActivity)
+                            .overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+                    }
+                }
             } else {
                 holder.itemView.visibility = View.GONE
                 holder.itemView.layoutParams = RecyclerView.LayoutParams(0, 0)
             }
+            return
         } else if (layoutId == R.layout.viewholder_popular) {
             val categoryPrice = holder.categoryPrice
             val addBtn = holder.addBtn
